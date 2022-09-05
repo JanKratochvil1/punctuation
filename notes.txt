@@ -1,0 +1,27 @@
+which docker
+  returns value, e.g. /usr/local/bin/docker, confirming that docker is available
+docker build -t local-fastapi .
+  bild a docker image with a tag 'local-fastapi''
+docker image list
+  lists all available docker images
+docker run -p 8000:8000 local-fastapi
+  runs a container of local-fastapi image on port 8000, therefore open with localhost:8000/docs in the browser
+
+how to access fastapi api is described in api_try file
+
+how to upload docker image to docker hub:
+  - create github repository
+  - add action docker image
+  - update .yaml file to include commands which upload model to docker hub
+
+how to upload docker repository to google cloud:
+  1) go to google cloud container registry
+  2) open google cloud command line and upload the docker hub with the following commands:
+
+      docker pull busybox
+      docker tag busybox gcr.io/my-project/busybox
+      docker push gcr.io/my-project/busybox
+
+  3) send the new container registry to google run, which will run the image/container
+      if the container includes fastAPI, don't forget to setup a correct port (8080 is default) in dockerfile and
+      setup the same on google run

@@ -1,0 +1,9 @@
+tokenizers
+transformers==4.20.1
+deepmultilingualpunctuation
+fastapi==0.78.0
+uvicorn[standard]
+torch
+sentencepiece
+protobuf== 3.20.*
+wandb==0.12.17
